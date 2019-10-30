@@ -87,20 +87,14 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: 'Halloween is Here!👻',
+    title: 'This is Halloween!🎃',
     date: 'Oct 30th, 2019',
-    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+    firstParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`,
 
-    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+    secondParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`,
 
-    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+    thirdParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! Halloween! Halloween!
+    La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`
   }
 ];
 
@@ -141,11 +135,12 @@ function createArticle(title, content, firstParagraph, secondParagraph, thirdPar
     const article = document.createElement('div');
     const articleTitle = document.createElement('h2');
     const articleContent = document.createElement('p');
-    // const articleOpen = document.createElement('button');
     const paragraph1 = document.createElement('p');
     const paragraph2 = document.createElement('p');
     const paragraph3 = document.createElement('p');
     const btn = document.createElement('span');
+    // const btnClose = document.createElement('span');
+
 
     article.appendChild(articleTitle);
     article.appendChild(articleContent);
@@ -159,17 +154,21 @@ function createArticle(title, content, firstParagraph, secondParagraph, thirdPar
     articleContent.classList.add('date');
     btn.classList.add('expandButton');
 
+    const open = '\u25bc';
+  
+    btn.textContent = open
     articleTitle.textContent = title
     articleContent.textContent = content
     paragraph1.textContent = firstParagraph
     paragraph2.textContent = secondParagraph
     paragraph3.textContent = thirdParagraph
 
+ 
   // Event Listener
     btn.addEventListener('click', (event) => {
         console.log('Button Clicked', event.target);
       article.classList.toggle('article-open')
-      article.classList.toggle('close')
+      btn.classList.toggle('article-open')
     })
 
   return article;
