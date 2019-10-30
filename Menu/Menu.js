@@ -56,9 +56,14 @@ const menuBtn = document.createElement('menu-button');
         menuBtn.addEventListener('click', (event) => {
             console.log('Menu Clicked Open', event.target);
           list.classList.toggle('menu--open');
-        })
+        }) //console works 
 
     return menu;
   }
-  menuBtn.appendChild(list(menuItems));
+
+  // 
+  // data.map(data => {
+  //   menuBtn.appendChild(menu(menuItems));
+  // });
+  
   
