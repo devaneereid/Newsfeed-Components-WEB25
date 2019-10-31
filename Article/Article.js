@@ -88,7 +88,7 @@ const data = [
   },
   {
     title: 'This is Halloween!🎃',
-    date: 'Oct 30th, 2019',
+    date: 'Oct 31st, 2019',
     firstParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`,
 
     secondParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`,
@@ -140,7 +140,6 @@ function createArticle(title, content, firstParagraph, secondParagraph, thirdPar
     const paragraph3 = document.createElement('p');
     const btn = document.createElement('span');
     // const btnClose = document.createElement('span');
-
 
     article.appendChild(articleTitle);
     article.appendChild(articleContent);
