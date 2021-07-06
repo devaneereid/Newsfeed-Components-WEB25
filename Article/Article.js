@@ -85,6 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'This is Halloween!🎃',
+    date: 'Oct 31st, 2019',
+    firstParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`,
+
+    secondParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`,
+
+    thirdParagraph: `This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! In this town we call home. Everyone hail to the pumpkin song. La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!) This is Halloween, this is Halloween... Halloween! Halloween! Halloween! Halloween! Halloween! Halloween!
+    La la la la la la la la la la (Halloween! Halloween!) La la la la la la la la la la (Halloween! Halloween!)`
   }
 ];
 
@@ -112,3 +122,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+// Function 
+
+const articles = document.querySelector('.articles');
+
+data.map(item => {
+  console.log('Data Returned')
+  articles.appendChild(createArticle(item.title, item.date, item.firstParagraph,item.secondParagraph, item.thirdParagraph));
+})
+
+function createArticle(title, content, firstParagraph, secondParagraph, thirdParagraph) {
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleContent = document.createElement('p');
+    const paragraph1 = document.createElement('p');
+    const paragraph2 = document.createElement('p');
+    const paragraph3 = document.createElement('p');
+    const btn = document.createElement('span');
+    // const btnClose = document.createElement('span');
+
+    article.appendChild(articleTitle);
+    article.appendChild(articleContent);
+    article.appendChild(paragraph1);
+    article.appendChild(paragraph2);
+    article.appendChild(paragraph3);
+    article.appendChild(btn);
+
+    article.classList.add('article');
+    articleTitle.classList.add('h2');
+    articleContent.classList.add('date');
+    btn.classList.add('expandButton');
+
+    const open = '\u25bc';
+  
+    btn.textContent = open
+    articleTitle.textContent = title
+    articleContent.textContent = content
+    paragraph1.textContent = firstParagraph
+    paragraph2.textContent = secondParagraph
+    paragraph3.textContent = thirdParagraph
+
+ 
+  // Event Listener
+    btn.addEventListener('click', (event) => {
+        console.log('Button Clicked', event.target);
+      article.classList.toggle('article-open')
+      btn.classList.toggle('article-open')
+    })
+
+  return article;
+}
